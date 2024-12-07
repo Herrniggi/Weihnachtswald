@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weihnachtswald</string>
+    <string name="gluehwein">Glühwein</string>
+    <string name="kinderpunsch">Kinderpunsch</string>
+    <string name="pfand">Pfand</string>
+    <string name="softgetraenk">Softgetränk</string>
+    <string name="bier">Bier</string>
+    <string name="getraenke">Getränke</string>
+    <string name="essen">Essen</string>
+    <string name="burger">Burger</string>
+    <string name="gemueserolle">Gemüserolle</string>
+    <string name="preis">Preis: </string>
+
+</resources>
