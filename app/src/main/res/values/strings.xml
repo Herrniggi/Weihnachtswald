@@ -10,5 +10,12 @@
     <string name="burger">Burger</string>
     <string name="gemueserolle">Gemüserolle</string>
     <string name="preis">Preis: </string>
+    <string name="bellaris">Bellaris</string>
+    <string name="cola">Cola</string>
+    <string name="fanta">Fanta</string>
+    <string name="spezi">Spezi</string>
+    <string name="apfelschorle">Apfelschorle</string>
+    <string name="wasser">Wasser</string>
+    <string name="johannisbeer">Johannisbeer</string>
 
 </resources>

@@ -12,25 +12,25 @@ class InputViewModel : ViewModel() {
     var preis: LiveData<Float> = pPreis;
 
     private val pPreisGluehwein = 6f
-    var preisGluehwein: Float = pPreisGluehwein
+    var preisGluehwein = pPreisGluehwein
 
-    private val pPreisKinderpunsch = MutableLiveData(5f)
-    var preisKinderpunsch: LiveData<Float> = pPreisKinderpunsch
+    private val pPreisKinderpunsch = 5f
+    var preisKinderpunsch  = pPreisKinderpunsch
 
-    private val pPreisPfand = MutableLiveData(4f)
-    var preisPfand: LiveData<Float> = pPreisPfand
+    private val pPreisPfand = 4f
+    var preisPfand = pPreisPfand
 
-    private val pPreisSoftgetraenk = MutableLiveData(2f)
-    var preisSoftgetraenk: LiveData<Float> = pPreisSoftgetraenk
+    private val pPreisSoftgetraenk = 2f
+    var preisSoftgetraenk = pPreisSoftgetraenk
 
-    private val pPreisBier = MutableLiveData(2.5f)
-    var preisBier: LiveData<Float> = pPreisBier
+    private val pPreisBier = 2.5f
+    var preisBier = pPreisBier
 
-    private val pPreisBurger = MutableLiveData(3f)
-    var preisBurger: LiveData<Float> = pPreisBurger
+    private val pPreisBurger = 3f
+    var preisBurger = pPreisBurger
 
-    private val pPreisGemueserolle = MutableLiveData(4f)
-    var preisGemueserolle: LiveData<Float> = pPreisGemueserolle
+    private val pPreisGemueserolle = 4f
+    var preisGemueserolle = pPreisGemueserolle
 
 
 
@@ -44,8 +44,26 @@ class InputViewModel : ViewModel() {
     private val pPfandAnzahl = MutableLiveData(0)
     var pfandAnzahl: LiveData<Int> = pPfandAnzahl;
 
-    private val pSoftgetraenkAnzahl = MutableLiveData(0)
-    var softgetraenkAnzahl: LiveData<Int> = pSoftgetraenkAnzahl;
+    private val pBellarisAnzahl = MutableLiveData(0)
+    var bellarisAnzahl: LiveData<Int> = pBellarisAnzahl;
+
+    private val pColaAnzahl = MutableLiveData(0)
+    var colaAnzahl: LiveData<Int> = pColaAnzahl;
+
+    private val pFantaAnzahl = MutableLiveData(0)
+    var fantaAnzahl: LiveData<Int> = pFantaAnzahl;
+
+    private val pSpeziAnzahl = MutableLiveData(0)
+    var speziAnzahl: LiveData<Int> = pSpeziAnzahl;
+
+    private val pApfelschorleAnzahl = MutableLiveData(0)
+    var apfelschorleAnzahl: LiveData<Int> = pApfelschorleAnzahl;
+
+    private val pWasserAnzahl = MutableLiveData(0)
+    var wasserAnzahl: LiveData<Int> = pWasserAnzahl;
+
+    private val pJohannisbeerAnzahl = MutableLiveData(0)
+    var johannisbeerAnzahl: LiveData<Int> = pJohannisbeerAnzahl;
 
     private val pBierAnzahl = MutableLiveData(0)
     var bierAnzahl: LiveData<Int> = pBierAnzahl;
@@ -83,7 +101,13 @@ class InputViewModel : ViewModel() {
         pGluehweinAnzahl.value = 0
         pKinderpunschAnzahl.value = 0
         pPfandAnzahl.value = 0
-        pSoftgetraenkAnzahl.value = 0
+        pBellarisAnzahl.value = 0
+        pColaAnzahl.value = 0
+        pFantaAnzahl.value = 0
+        pSpeziAnzahl.value = 0
+        pApfelschorleAnzahl.value = 0
+        pWasserAnzahl.value = 0
+        pJohannisbeerAnzahl.value = 0
         pBierAnzahl.value = 0
         pBurgerAnzahl.value = 0
         pGemueserolleAnzahl.value = 0
@@ -126,16 +150,94 @@ class InputViewModel : ViewModel() {
         pPfandAnzahl.value = pPfandAnzahl.value?.minus(1)
     }
 
-    //Softgetraänk
-    fun plusSoftgetraenk() {
+    //Bellaris
+    fun plusBellaris() {
         pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pSoftgetraenkAnzahl.value = pSoftgetraenkAnzahl.value?.plus(1)
+        pBellarisAnzahl.value = pBellarisAnzahl.value?.plus(1)
         pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
     }
 
-    fun minusSoftgetraenk(){
+    fun minusBellaris(){
         pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pSoftgetraenkAnzahl.value = pSoftgetraenkAnzahl.value?.minus(1)
+        pBellarisAnzahl.value = pBellarisAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Cola
+    fun plusCola() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pColaAnzahl.value = pColaAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusCola(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pColaAnzahl.value = pColaAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Fanta
+    fun plusFanta() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pFantaAnzahl.value = pFantaAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusFanta(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pFantaAnzahl.value = pFantaAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Spezi
+    fun plusSpezi() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pSpeziAnzahl.value = pSpeziAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusSpezi(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pSpeziAnzahl.value = pSpeziAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Apfelschorle
+    fun plusApfelschorle() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pApfelschorleAnzahl.value = pApfelschorleAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusApfelschorle(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pApfelschorleAnzahl.value = pApfelschorleAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Wasser
+    fun plusWasser() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pWasserAnzahl.value = pWasserAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusWasser(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pWasserAnzahl.value = pWasserAnzahl.value?.minus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+    }
+
+    //Johannisbeer
+    fun plusJohannisbeer() {
+        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
+        pJohannisbeerAnzahl.value = pJohannisbeerAnzahl.value?.plus(1)
+        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+    }
+
+    fun minusJohannisbeer(){
+        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
+        pJohannisbeerAnzahl.value = pJohannisbeerAnzahl.value?.minus(1)
         pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
     }
 

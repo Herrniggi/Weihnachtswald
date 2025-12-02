@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.ArrowBack
@@ -32,7 +34,7 @@ import de.niklasbecker.wheinachtswald.Styling.CustomTagText
 
 @Composable
 fun InputView( inputViewModel: InputViewModel) {
-    Column(Modifier.fillMaxSize()) {
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         Column(modifier = Modifier.padding(5.dp)) {
             GreetingInputView(inputViewModel)
         }
@@ -60,7 +62,13 @@ fun Trinken(inputViewModel: InputViewModel){
     CustomBoldHeadline(stringResource(R.string.getraenke))
     Gluehwein(inputViewModel)
     Kinderpunsch(inputViewModel)
-    Softgetraenk(inputViewModel)
+    Bellaris(inputViewModel)
+    Cola(inputViewModel)
+    Fanta(inputViewModel)
+    Spezi(inputViewModel)
+    Apfelshorle(inputViewModel)
+    Wasser(inputViewModel)
+    Johannisbeer(inputViewModel)
     Bier(inputViewModel)
 
 }
@@ -153,25 +161,169 @@ fun Tassenpfand(inputViewModel: InputViewModel){
 }
 
 @Composable
-fun Softgetraenk(inputViewModel: InputViewModel){
+fun Bellaris(inputViewModel: InputViewModel){
 
     Row ()
     {
-        CustomTagText(text = stringResource(R.string.softgetraenk))
+        CustomTagText(text = stringResource(R.string.bellaris))
 
         IconButton(
-            onClick = { inputViewModel.minusSoftgetraenk() }) {
+            onClick = { inputViewModel.minusBellaris() }) {
 
             Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
         }
 
-        IconButton(onClick = { inputViewModel.plusSoftgetraenk() }) {
+        IconButton(onClick = { inputViewModel.plusBellaris() }) {
 
             Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
 
         }
 
-        CustomAnzahl(inputViewModel.softgetraenkAnzahl.value.toString())
+        CustomAnzahl(inputViewModel.bellarisAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Cola(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.cola))
+
+        IconButton(
+            onClick = { inputViewModel.minusCola() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusCola() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.colaAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Fanta(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.fanta))
+
+        IconButton(
+            onClick = { inputViewModel.minusFanta() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusFanta() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.fantaAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Spezi(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.spezi))
+
+        IconButton(
+            onClick = { inputViewModel.minusSpezi() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusSpezi() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.speziAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Apfelshorle(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.apfelschorle))
+
+        IconButton(
+            onClick = { inputViewModel.minusApfelschorle() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusApfelschorle() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.apfelschorleAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Wasser(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.wasser))
+
+        IconButton(
+            onClick = { inputViewModel.minusWasser() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusWasser() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.wasserAnzahl.value.toString())
+    }
+
+}
+
+@Composable
+fun Johannisbeer(inputViewModel: InputViewModel){
+
+    Row ()
+    {
+        CustomTagText(text = stringResource(R.string.johannisbeer))
+
+        IconButton(
+            onClick = { inputViewModel.minusJohannisbeer() }) {
+
+            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "Delete")
+        }
+
+        IconButton(onClick = { inputViewModel.plusJohannisbeer() }) {
+
+            Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add")
+
+        }
+
+        CustomAnzahl(inputViewModel.johannisbeerAnzahl.value.toString())
     }
 
 }
