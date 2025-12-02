@@ -1,5 +1,6 @@
 package de.niklasbecker.wheinachtswald.Inputview
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -43,14 +43,19 @@ fun InputView( inputViewModel: InputViewModel) {
 
 @Composable
 fun GreetingInputView(inputViewModel: InputViewModel){
-    val preis by inputViewModel.preis.observeAsState(0f)
     Trinken(inputViewModel)
     Essen(inputViewModel)
     Tassenpfand(inputViewModel)
-    Ergebnis(preis)
     Reset(inputViewModel)
     Statistik(inputViewModel)
 
+
+}
+
+@Composable
+fun Endpreis(inputViewModel: InputViewModel) {
+    val preis by inputViewModel.preis.observeAsState(0f)
+    Ergebnis(preis)
 
 }
 
@@ -59,7 +64,10 @@ fun GreetingInputView(inputViewModel: InputViewModel){
 
 @Composable
 fun Trinken(inputViewModel: InputViewModel){
-    CustomBoldHeadline(stringResource(R.string.getraenke))
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        CustomBoldHeadline(stringResource(R.string.getraenke))
+        Endpreis(inputViewModel)
+    }
     Gluehwein(inputViewModel)
     Kinderpunsch(inputViewModel)
     Bellaris(inputViewModel)
