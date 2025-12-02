@@ -11,8 +11,8 @@ class InputViewModel : ViewModel() {
     private val pPreis = MutableLiveData(0f)
     var preis: LiveData<Float> = pPreis;
 
-    private val pPreisGluehwein = MutableLiveData(6f)
-    var preisGluehwein: LiveData<Float> = pPreisGluehwein
+    private val pPreisGluehwein = 6f
+    var preisGluehwein: Float = pPreisGluehwein
 
     private val pPreisKinderpunsch = MutableLiveData(5f)
     var preisKinderpunsch: LiveData<Float> = pPreisKinderpunsch
