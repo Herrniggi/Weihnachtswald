@@ -17,6 +17,7 @@ import de.niklasbecker.wheinachtswald.Inputview.model.InputViewModel
 import de.niklasbecker.wheinachtswald.Inputview.model.InputViewModelFactory
 
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,99 +1,88 @@
 package de.niklasbecker.wheinachtswald.Inputview.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class InputViewModel : ViewModel() {
 
-
-//Price Value
+    //Price Value
     private val pPreis = MutableLiveData(0f)
-    var preis: LiveData<Float> = pPreis;
+    val preis: LiveData<Float> = pPreis
 
-    private val pPreisGluehwein = 6f
-    var preisGluehwein = pPreisGluehwein
+    val preisGluehwein = 6f
 
-    private val pPreisKinderpunsch = 5f
-    var preisKinderpunsch  = pPreisKinderpunsch
+    val preisKinderpunsch = 5f
 
-    private val pPreisPfand = 4f
-    var preisPfand = pPreisPfand
+    val preisPfand = 4f
 
-    private val pPreisSoftgetraenk = 2f
-    var preisSoftgetraenk = pPreisSoftgetraenk
+    val preisSoftgetraenk = 2f
 
-    private val pPreisBier = 2.5f
-    var preisBier = pPreisBier
+    val preisBier = 2.5f
 
-    private val pPreisBurger = 3f
-    var preisBurger = pPreisBurger
+    val preisBurger = 3f
 
-    private val pPreisGemueserolle = 4f
-    var preisGemueserolle = pPreisGemueserolle
+    val preisGemueserolle = 4f
 
-
-
-//Anzahl Value
+    //Anzahl Value
     private val pGluehweinAnzahl = MutableLiveData(0)
-    var gluehweinAnzahl: LiveData<Int> = pGluehweinAnzahl;
+    val gluehweinAnzahl: LiveData<Int> = pGluehweinAnzahl
 
     private val pKinderpunschAnzahl = MutableLiveData(0)
-    var kinderpunschAnzahl: LiveData<Int> = pKinderpunschAnzahl;
+    val kinderpunschAnzahl: LiveData<Int> = pKinderpunschAnzahl
 
     private val pPfandAnzahl = MutableLiveData(0)
-    var pfandAnzahl: LiveData<Int> = pPfandAnzahl;
+    val pfandAnzahl: LiveData<Int> = pPfandAnzahl
 
     private val pBellarisAnzahl = MutableLiveData(0)
-    var bellarisAnzahl: LiveData<Int> = pBellarisAnzahl;
+    val bellarisAnzahl: LiveData<Int> = pBellarisAnzahl
 
     private val pColaAnzahl = MutableLiveData(0)
-    var colaAnzahl: LiveData<Int> = pColaAnzahl;
+    val colaAnzahl: LiveData<Int> = pColaAnzahl
 
     private val pFantaAnzahl = MutableLiveData(0)
-    var fantaAnzahl: LiveData<Int> = pFantaAnzahl;
+    val fantaAnzahl: LiveData<Int> = pFantaAnzahl
 
     private val pSpeziAnzahl = MutableLiveData(0)
-    var speziAnzahl: LiveData<Int> = pSpeziAnzahl;
+    val speziAnzahl: LiveData<Int> = pSpeziAnzahl
 
     private val pApfelschorleAnzahl = MutableLiveData(0)
-    var apfelschorleAnzahl: LiveData<Int> = pApfelschorleAnzahl;
+    val apfelschorleAnzahl: LiveData<Int> = pApfelschorleAnzahl
 
     private val pWasserAnzahl = MutableLiveData(0)
-    var wasserAnzahl: LiveData<Int> = pWasserAnzahl;
+    val wasserAnzahl: LiveData<Int> = pWasserAnzahl
 
     private val pJohannisbeerAnzahl = MutableLiveData(0)
-    var johannisbeerAnzahl: LiveData<Int> = pJohannisbeerAnzahl;
+    val johannisbeerAnzahl: LiveData<Int> = pJohannisbeerAnzahl
 
     private val pBierAnzahl = MutableLiveData(0)
-    var bierAnzahl: LiveData<Int> = pBierAnzahl;
+    val bierAnzahl: LiveData<Int> = pBierAnzahl
 
     private val pBurgerAnzahl = MutableLiveData(0)
-    var burgerAnzahl: LiveData<Int> = pBurgerAnzahl;
+    val burgerAnzahl: LiveData<Int> = pBurgerAnzahl
 
     private val pGemueserolleAnzahl = MutableLiveData(0)
-    var gemueserolleAnzahl: LiveData<Int> = pGemueserolleAnzahl;
+    val gemueserolleAnzahl: LiveData<Int> = pGemueserolleAnzahl
 
-//Statistik Value
+    //Statistik Value
     private val pGluehweinStatistik = MutableLiveData(0)
-    var gluehweinStatistik: LiveData<Int> = pGluehweinStatistik;
+    val gluehweinStatistik: LiveData<Int> = pGluehweinStatistik
 
     private val pKinderpunschStatistik = MutableLiveData(0)
-    var kinderpunschStatistik: LiveData<Int> = pKinderpunschStatistik;
+    val kinderpunschStatistik: LiveData<Int> = pKinderpunschStatistik
 
     private val pSoftgetraenkStatistik = MutableLiveData(0)
-    var softgetraenkStatistik: LiveData<Int> = pSoftgetraenkStatistik;
+    val softgetraenkStatistik: LiveData<Int> = pSoftgetraenkStatistik
 
     private val pBierStatistik = MutableLiveData(0)
-    var bierStatistik: LiveData<Int> = pBierStatistik;
+    val bierStatistik: LiveData<Int> = pBierStatistik
 
     private val pBurgerStatistik = MutableLiveData(0)
-    var burgerStatistik: LiveData<Int> = pBurgerStatistik;
+    val burgerStatistik: LiveData<Int> = pBurgerStatistik
 
     private val pGemueserolleStatistik = MutableLiveData(0)
-    var gemueserolleStatistik: LiveData<Int> = pGemueserolleStatistik;
-
-
+    val gemueserolleStatistik: LiveData<Int> = pGemueserolleStatistik
 
     //Reset Value
     fun preisReset(){
@@ -113,172 +102,188 @@ class InputViewModel : ViewModel() {
         pGemueserolleAnzahl.value = 0
     }
 
+    // Helper functions
+    private fun addFloat(liveData: MutableLiveData<Float>, amount: Float) {
+        liveData.value = (liveData.value ?: 0f) + amount
+    }
+
+    private fun subFloat(liveData: MutableLiveData<Float>, amount: Float) {
+        liveData.value = (liveData.value ?: 0f) - amount
+    }
+
+    private fun addInt(liveData: MutableLiveData<Int>, amount: Int) {
+        liveData.value = (liveData.value ?: 0) + amount
+    }
+
+    private fun subInt(liveData: MutableLiveData<Int>, amount: Int) {
+        liveData.value = (liveData.value ?: 0) - amount
+    }
+
     //Glühwein
     fun plusGluehwein() {
-        pPreis.value = pPreis.value?.plus(preisGluehwein)
-        pGluehweinAnzahl.value = pGluehweinAnzahl.value?.plus(1)
-        pGluehweinStatistik.value = pGluehweinStatistik.value?.plus(1)
+        print("!!!TEST!!!")
+        addFloat(pPreis, preisGluehwein)
+        addInt(pGluehweinAnzahl, 1)
+        addInt(pGluehweinStatistik, 1)
     }
 
     fun minusGluehwein(){
-        pPreis.value = pPreis.value?.minus(preisGluehwein)
-        pGluehweinAnzahl.value = pGluehweinAnzahl.value?.minus(1)
-        pGluehweinStatistik.value = pGluehweinStatistik.value?.minus(1)
+        subFloat(pPreis, preisGluehwein)
+        subInt(pGluehweinAnzahl, 1)
+        subInt(pGluehweinStatistik, 1)
     }
 
     //Kinderpunsch
     fun plusKinderpunsch() {
-        pPreis.value = pPreis.value?.plus(preisKinderpunsch)
-        pKinderpunschAnzahl.value =  pKinderpunschAnzahl.value?.plus(1)
-        pKinderpunschStatistik.value = pKinderpunschStatistik.value?.plus(1)
+        addFloat(pPreis, preisKinderpunsch)
+        addInt(pKinderpunschAnzahl, 1)
+        addInt(pKinderpunschStatistik, 1)
     }
 
     fun minusKinderpunsch(){
-        pPreis.value = pPreis.value?.minus(preisKinderpunsch)
-        pKinderpunschAnzahl.value =  pKinderpunschAnzahl.value?.minus(1)
-        pKinderpunschStatistik.value = pKinderpunschStatistik.value?.minus(1)
+        subFloat(pPreis, preisKinderpunsch)
+        subInt(pKinderpunschAnzahl, 1)
+        subInt(pKinderpunschStatistik, 1)
     }
 
     //Pfand
     fun plusRueckgabe() {
-        pPreis.value = pPreis.value?.minus(preisPfand)
-        pPfandAnzahl.value = pPfandAnzahl.value?.plus(1)
+        subFloat(pPreis, preisPfand)
+        addInt(pPfandAnzahl, 1)
     }
 
     fun minusRueckgabe(){
-        pPreis.value = pPreis.value?.plus(preisPfand)
-        pPfandAnzahl.value = pPfandAnzahl.value?.minus(1)
+        addFloat(pPreis, preisPfand)
+        subInt(pPfandAnzahl, 1)
     }
 
     //Bellaris
     fun plusBellaris() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pBellarisAnzahl.value = pBellarisAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pBellarisAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusBellaris(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pBellarisAnzahl.value = pBellarisAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pBellarisAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Cola
     fun plusCola() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pColaAnzahl.value = pColaAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pColaAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusCola(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pColaAnzahl.value = pColaAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pColaAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Fanta
     fun plusFanta() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pFantaAnzahl.value = pFantaAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pFantaAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusFanta(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pFantaAnzahl.value = pFantaAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pFantaAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Spezi
     fun plusSpezi() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pSpeziAnzahl.value = pSpeziAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pSpeziAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusSpezi(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pSpeziAnzahl.value = pSpeziAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pSpeziAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Apfelschorle
     fun plusApfelschorle() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pApfelschorleAnzahl.value = pApfelschorleAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pApfelschorleAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusApfelschorle(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pApfelschorleAnzahl.value = pApfelschorleAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pApfelschorleAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Wasser
     fun plusWasser() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pWasserAnzahl.value = pWasserAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pWasserAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusWasser(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pWasserAnzahl.value = pWasserAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pWasserAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Johannisbeer
     fun plusJohannisbeer() {
-        pPreis.value = pPreis.value?.plus(preisSoftgetraenk)
-        pJohannisbeerAnzahl.value = pJohannisbeerAnzahl.value?.plus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.plus(1)
+        addFloat(pPreis, preisSoftgetraenk)
+        addInt(pJohannisbeerAnzahl, 1)
+        addInt(pSoftgetraenkStatistik, 1)
     }
 
     fun minusJohannisbeer(){
-        pPreis.value = pPreis.value?.minus(preisSoftgetraenk)
-        pJohannisbeerAnzahl.value = pJohannisbeerAnzahl.value?.minus(1)
-        pSoftgetraenkStatistik.value = pSoftgetraenkStatistik.value?.minus(1)
+        subFloat(pPreis, preisSoftgetraenk)
+        subInt(pJohannisbeerAnzahl, 1)
+        subInt(pSoftgetraenkStatistik, 1)
     }
 
     //Bier
     fun plusBier() {
-        pPreis.value = pPreis.value?.plus(preisBier)
-        pBierAnzahl.value = pBierAnzahl.value?.plus(1)
-        pBierStatistik.value = pBierStatistik.value?.plus(1)
+        addFloat(pPreis, preisBier)
+        addInt(pBierAnzahl, 1)
+        addInt(pBierStatistik, 1)
     }
 
     fun minusBier(){
-        pPreis.value = pPreis.value?.minus(preisBier)
-        pBierAnzahl.value = pBierAnzahl.value?.minus(1)
-        pBierStatistik.value = pBierStatistik.value?.minus(1)
+        subFloat(pPreis, preisBier)
+        subInt(pBierAnzahl, 1)
+        subInt(pBierStatistik, 1)
     }
 
     //Burger
     fun plusBurger() {
-        pPreis.value = pPreis.value?.plus(preisBurger)
-        pBurgerAnzahl.value = pBurgerAnzahl.value?.plus(1)
-        pBurgerStatistik.value = pBurgerStatistik.value?.plus(1)
+        addFloat(pPreis, preisBurger)
+        addInt(pBurgerAnzahl, 1)
+        addInt(pBurgerStatistik, 1)
     }
 
     fun minusBurger(){
-        pPreis.value = pPreis.value?.minus(preisBurger)
-        pBurgerAnzahl.value = pBurgerAnzahl.value?.minus(1)
-        pBurgerStatistik.value = pBurgerStatistik.value?.minus(1)
+        subFloat(pPreis, preisBurger)
+        subInt(pBurgerAnzahl, 1)
+        subInt(pBurgerStatistik, 1)
     }
 
     //Gemueserolle
     fun plusGemueserolle() {
-        pPreis.value = pPreis.value?.plus(preisGemueserolle)
-        pGemueserolleAnzahl.value = pGemueserolleAnzahl.value?.plus(1)
-        pGemueserolleStatistik.value = pGemueserolleStatistik.value?.plus(1)
+        addFloat(pPreis, preisGemueserolle)
+        addInt(pGemueserolleAnzahl, 1)
+        addInt(pGemueserolleStatistik, 1)
     }
 
     fun minusGemueserolle(){
-        pPreis.value = pPreis.value?.minus(preisGemueserolle)
-        pGemueserolleAnzahl.value = pGemueserolleAnzahl.value?.minus(1)
-        pGemueserolleStatistik.value = pGemueserolleStatistik.value?.minus(1)
+        subFloat(pPreis, preisGemueserolle)
+        subInt(pGemueserolleAnzahl, 1)
+        subInt(pGemueserolleStatistik, 1)
     }
-
-
 }

@@ -31,6 +31,9 @@ import de.niklasbecker.wheinachtswald.Styling.CustomAnzahl
 import de.niklasbecker.wheinachtswald.Styling.CustomBoldHeadline
 import de.niklasbecker.wheinachtswald.Styling.CustomTagText
 
+//Variablen
+
+
 
 @Composable
 fun InputView( inputViewModel: InputViewModel) {
@@ -49,13 +52,6 @@ fun GreetingInputView(inputViewModel: InputViewModel){
     Reset(inputViewModel)
     Statistik(inputViewModel)
 
-
-}
-
-@Composable
-fun Endpreis(inputViewModel: InputViewModel) {
-    val preis by inputViewModel.preis.observeAsState(0f)
-    Ergebnis(preis)
 
 }
 
@@ -94,6 +90,7 @@ fun Essen(inputViewModel: InputViewModel){
 
 @Composable
 fun Gluehwein(inputViewModel: InputViewModel){
+    val gluehweinAnzahl by inputViewModel.gluehweinAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -111,7 +108,7 @@ fun Gluehwein(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.gluehweinAnzahl.value.toString())
+        CustomAnzahl(gluehweinAnzahl.toString())
 
     }
 
@@ -120,6 +117,7 @@ fun Gluehwein(inputViewModel: InputViewModel){
 
 @Composable
 fun Kinderpunsch(inputViewModel: InputViewModel){
+    val kinderpunschAnzahl by inputViewModel.kinderpunschAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -137,13 +135,14 @@ fun Kinderpunsch(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.kinderpunschAnzahl.value.toString())
+        CustomAnzahl(kinderpunschAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Tassenpfand(inputViewModel: InputViewModel){
+    val pfandAnzahl by inputViewModel.pfandAnzahl.observeAsState(0)
     
     CustomBoldHeadline(text = stringResource(R.string.pfand))
     
@@ -163,13 +162,14 @@ fun Tassenpfand(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.pfandAnzahl.value.toString())
+        CustomAnzahl(pfandAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Bellaris(inputViewModel: InputViewModel){
+    val bellarisAnzahl by inputViewModel.bellarisAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -187,13 +187,14 @@ fun Bellaris(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.bellarisAnzahl.value.toString())
+        CustomAnzahl(bellarisAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Cola(inputViewModel: InputViewModel){
+    val colaAnzahl by inputViewModel.colaAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -211,13 +212,14 @@ fun Cola(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.colaAnzahl.value.toString())
+        CustomAnzahl(colaAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Fanta(inputViewModel: InputViewModel){
+    val fantaAnzahl by inputViewModel.fantaAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -235,13 +237,14 @@ fun Fanta(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.fantaAnzahl.value.toString())
+        CustomAnzahl(fantaAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Spezi(inputViewModel: InputViewModel){
+    val speziAnzahl by inputViewModel.speziAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -259,13 +262,14 @@ fun Spezi(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.speziAnzahl.value.toString())
+        CustomAnzahl(speziAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Apfelshorle(inputViewModel: InputViewModel){
+    val apfelschorleAnzahl by inputViewModel.apfelschorleAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -283,13 +287,14 @@ fun Apfelshorle(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.apfelschorleAnzahl.value.toString())
+        CustomAnzahl(apfelschorleAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Wasser(inputViewModel: InputViewModel){
+    val wasserAnzahl by inputViewModel.wasserAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -307,13 +312,14 @@ fun Wasser(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.wasserAnzahl.value.toString())
+        CustomAnzahl(wasserAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Johannisbeer(inputViewModel: InputViewModel){
+    val johannisbeerAnzahl by inputViewModel.johannisbeerAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -331,13 +337,15 @@ fun Johannisbeer(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.johannisbeerAnzahl.value.toString())
+        CustomAnzahl(johannisbeerAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Bier(inputViewModel: InputViewModel){
+    val bierAnzahl by inputViewModel.bierAnzahl.observeAsState(0)
+
     Row ()
     {
         CustomTagText(text = stringResource(R.string.bier))
@@ -354,13 +362,14 @@ fun Bier(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.bierAnzahl.value.toString())
+        CustomAnzahl(bierAnzahl.toString())
     }
 
 }
 
 @Composable
 fun Burger(inputViewModel: InputViewModel){
+    val burgerAnzahl by inputViewModel.burgerAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -378,7 +387,7 @@ fun Burger(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.burgerAnzahl.value.toString())
+        CustomAnzahl(burgerAnzahl.toString())
 
 
     }
@@ -387,6 +396,7 @@ fun Burger(inputViewModel: InputViewModel){
 
 @Composable
 fun Gemueserolle(inputViewModel: InputViewModel){
+    val gemueserolleAnzahl by inputViewModel.gemueserolleAnzahl.observeAsState(0)
 
     Row ()
     {
@@ -404,7 +414,7 @@ fun Gemueserolle(inputViewModel: InputViewModel){
 
         }
 
-        CustomAnzahl(inputViewModel.gemueserolleAnzahl.value.toString())
+        CustomAnzahl(gemueserolleAnzahl.toString())
     }
 
 }
@@ -440,17 +450,27 @@ fun Reset(inputViewModel: InputViewModel){
 
 @Composable
 fun Statistik(inputViewModel: InputViewModel){
+
+
+    val gluehweinStatistik by inputViewModel.gluehweinStatistik.observeAsState(0)
+    val kinderpunschStatistik by inputViewModel.kinderpunschStatistik.observeAsState(0)
+    val softgetraenkStatistik by inputViewModel.softgetraenkStatistik.observeAsState(0)
+    val bierStatistik by inputViewModel.bierStatistik.observeAsState(0)
+    val burgerStatistik by inputViewModel.burgerStatistik.observeAsState(0)
+    val gemueserolleStatistik by inputViewModel.gemueserolleStatistik.observeAsState(0)
+
+
     Row (Modifier.fillMaxWidth(1f)){
         Row (Modifier.width(150.dp)) {
             Text(text = stringResource(R.string.gluehwein))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.gluehweinStatistik.value.toString())
+            Text(text = gluehweinStatistik.toString())
         }
 
         Row {
             Text(text = stringResource(R.string.kinderpunsch))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.kinderpunschStatistik.value.toString())
+            Text(text = kinderpunschStatistik.toString())
         }
     }
 
@@ -458,13 +478,13 @@ fun Statistik(inputViewModel: InputViewModel){
         Row (Modifier.width(150.dp)) {
             Text(text = stringResource(R.string.softgetraenk))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.softgetraenkStatistik.value.toString())
+            Text(text = softgetraenkStatistik.toString())
         }
 
         Row {
             Text(text = stringResource(R.string.bier))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.bierStatistik.value.toString())
+            Text(text = bierStatistik.toString())
         }
     }
 
@@ -472,14 +492,21 @@ fun Statistik(inputViewModel: InputViewModel){
         Row (Modifier.width(150.dp)){
             Text(text = stringResource(R.string.burger))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.burgerStatistik.value.toString())
+            Text(text = burgerStatistik.toString())
         }
 
         Row {
             Text(text = stringResource(R.string.gemueserolle))
             Spacer(modifier = Modifier.padding(start = 10.dp))
-            Text(text = inputViewModel.gemueserolleStatistik.value.toString())
+            Text(text = gemueserolleStatistik.toString())
         }
     }
+
+}
+
+@Composable
+fun Endpreis(inputViewModel: InputViewModel) {
+    val preis by inputViewModel.preis.observeAsState(0f)
+    Ergebnis(preis)
 
 }
